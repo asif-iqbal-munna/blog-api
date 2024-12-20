@@ -27,4 +27,10 @@ router.delete(
   BlogControllers.deleteBlog,
 );
 
+router.get(
+  '/',
+  authorize(API_ACCESS_CONTROLS.public),
+  BlogControllers.getAllBlogs,
+);
+
 export const blogRoutes = router;
