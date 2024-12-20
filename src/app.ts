@@ -13,7 +13,7 @@ app.use(express.json());
 // app.use("/api", routes);
 
 app.get('/api/health-check', (req: Request, res: Response) => {
-  res.send('Health not OK!');
+  res.send('Health OK!');
 });
 
 // 404

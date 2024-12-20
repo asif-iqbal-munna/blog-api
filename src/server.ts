@@ -4,9 +4,7 @@ import config from './config';
 
 async function main() {
   try {
-    await mongoose.connect(
-      'mongodb+srv://munna:munna@cluster0.bauja.mongodb.net/blog-api?retryWrites=true&w=majority&appName=Cluster0' as string,
-    );
+    await mongoose.connect(config.databaseUrl as string);
     app.listen(config.port, () => {
       console.log(`Example app listening on port ${config.port}`);
     });
