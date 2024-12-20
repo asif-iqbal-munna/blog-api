@@ -5,6 +5,13 @@ const createBlogSchema = z.object({
   content: z.string({ message: 'Email is required' }),
 });
 
+const updateBlogSchema = z.object({
+  title: z.string().optional().nullable(),
+  content: z.string().optional().nullable(),
+  isPublished: z.boolean().optional().nullable(),
+});
+
 export const BlogValidations = {
   createBlogSchema,
+  updateBlogSchema,
 };

@@ -6,3 +6,11 @@ export type ApiResponse<T> = {
   error?: unknown;
   stack?: unknown;
 };
+
+export const API_ACCESS_CONTROLS = {
+  user: 'user',
+  admin: 'admin',
+  public: 'public',
+} as const;
+
+export type TAccessControl = keyof typeof API_ACCESS_CONTROLS;

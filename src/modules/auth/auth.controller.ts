@@ -53,8 +53,6 @@ const handleLogin: RequestHandler = async (req, res, next) => {
       });
     }
 
-    console.log(user);
-
     const isPasswordValid = await User.isPasswordMatched(
       req.body.password,
       user.password,
@@ -81,7 +79,7 @@ const handleLogin: RequestHandler = async (req, res, next) => {
       message: 'Login successfully',
       statusCode: httpStatus.OK,
       data: {
-        token,
+        token: `Bearer ${token}`,
       },
     });
   } catch (error) {
