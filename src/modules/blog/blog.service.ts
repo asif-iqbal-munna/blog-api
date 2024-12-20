@@ -12,7 +12,17 @@ const updateBlogIntoDb = async (blog: IBlog, blogId: string) => {
   });
 };
 
+const getBlogByIdFromDb = async (blogId: string) => {
+  return Blog.findById(blogId).populate('author').lean();
+};
+
+const deleteBlogFromDb = async (blogId: string) => {
+  return Blog.findByIdAndDelete(blogId);
+};
+
 export const BlogServices = {
   createBlogIntoDb,
   updateBlogIntoDb,
+  deleteBlogFromDb,
+  getBlogByIdFromDb,
 };

@@ -11,6 +11,9 @@ export interface IBlog {
 }
 
 export interface BlogModel extends Model<IBlog> {
-  getBlogById(id: mongoose.Schema.Types.ObjectId): Promise<IBlog | null>;
-  getBlogByAuthor(id: mongoose.Schema.Types.ObjectId): Promise<IBlog | null>;
+  getBlogById(id: string): Promise<IBlog | null>;
+  getBlogByAuthor(
+    id: mongoose.Schema.Types.ObjectId,
+    blogId: string,
+  ): Promise<IBlog | null>;
 }

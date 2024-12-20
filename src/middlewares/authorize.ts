@@ -62,7 +62,7 @@ const authorize = (...requiredAccess: TAccessControl[]) => {
       return sendResponse(res, {
         statusCode: httpStatus.UNAUTHORIZED,
         success: false,
-        message: 'You are not authorized!',
+        message: 'You are not authorized for this action!',
       });
     }
 

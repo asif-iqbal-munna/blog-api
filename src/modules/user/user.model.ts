@@ -40,7 +40,7 @@ userSchema.statics.checkUserExistByEmail = async function (email: string) {
 };
 
 userSchema.statics.checkUserExistById = async function (
-  id: mongoose.Types.ObjectId,
+  id: mongoose.Types.ObjectId | string,
 ) {
   return await this.findById(id);
 };

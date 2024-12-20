@@ -53,6 +53,14 @@ const handleLogin: RequestHandler = async (req, res, next) => {
       });
     }
 
+    if (user.isBlocked) {
+      return sendResponse(res, {
+        statusCode: httpStatus.UNAUTHORIZED,
+        success: false,
+        message: 'User is blocked',
+      });
+    }
+
     const isPasswordValid = await User.isPasswordMatched(
       req.body.password,
       user.password,

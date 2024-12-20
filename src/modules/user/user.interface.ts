@@ -14,7 +14,9 @@ export interface IUser {
 
 export interface UserModel extends Model<IUser> {
   checkUserExistByEmail(email: string): Promise<IUser | null>;
-  checkUserExistById(id: mongoose.Schema.Types.ObjectId): Promise<IUser | null>;
+  checkUserExistById(
+    id: mongoose.Schema.Types.ObjectId | string,
+  ): Promise<IUser | null>;
   isPasswordMatched(
     givenPassword: string,
     savedPassword: string,
