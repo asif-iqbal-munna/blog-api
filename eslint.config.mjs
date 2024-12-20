@@ -13,11 +13,9 @@ export default [
     rules: {
       'no-undef': 'error',
       'no-unused-vars': 'error',
-      'no-unused-expression': 'error',
       eqeqeq: 'off',
       'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
       'no-console': 'warn',
     },
   },
-  eslintPluginPrettierRecommended,
 ];
