@@ -80,7 +80,11 @@ const handleLogin: RequestHandler = async (req, res, next) => {
       role: user.role,
     };
 
-    const token = signToken(jwtPayload, config.jwtSecret as string, '7d');
+    const token = signToken(
+      jwtPayload,
+      config.jwtSecret as string,
+      config.jwtExpiresIn as string,
+    );
 
     sendResponse(res, {
       success: true,
